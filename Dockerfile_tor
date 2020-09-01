@@ -1,0 +1,6 @@
+FROM alpine:latest
+RUN apk update && apk fetch && apk add vim tor
+COPY torrc /etc/tor/torrc
+USER tor
+ENTRYPOINT ["/usr/bin/tor"]
+
